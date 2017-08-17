@@ -24,7 +24,7 @@ SAMURAI assumes that control arms of unpublished studies have effects similar to
 
 Conclusions: To our knowledge, SAMURAI is currently the only tool that allows systematic reviewers to incorporate information about sample sizes of treatment groups in registered but unpublished clinical trials in their assessment of the potential impact of publication bias on meta-analyses. SAMURAI produces forest plots for visualizing how inclusion of registered unpublished studies might change the results of a meta-analysis. We hope systematic reviewers will find SAMURAI to be a useful addition to their toolkit.
 
-## Keywords
+### Keywords
 
 Clinical trial registries 
 Meta-analysis 
