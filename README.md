@@ -1,4 +1,4 @@
-# R-samurai
+# SAMURAI, an R package
 
 ## Software
 
