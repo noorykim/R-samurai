@@ -26,5 +26,10 @@ Conclusions: To our knowledge, SAMURAI is currently the only tool that allows sy
 
 ## Keywords
 
-Clinical trial registries Meta-analysis Publication bias R-software Sensitivity analysis Statistical software Unpublished studies
-Background
+Clinical trial registries 
+Meta-analysis 
+Publication bias 
+R-software 
+Sensitivity analysis 
+Statistical software 
+Unpublished studies
