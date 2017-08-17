@@ -1,5 +1,7 @@
 # SAMURAI, an R package
 
+A visualization tool for systematic reviewers gauging how much a meta-analysis of published clinical trial results may (1) change with the inclusion of results from unpublished studies and/or (2) remain biased by the exclusion of unpublished results.
+
 ## Software
 
 [CRAN repository](https://CRAN.R-project.org/package=SAMURAI)
