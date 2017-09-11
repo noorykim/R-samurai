@@ -4,7 +4,7 @@ A visualization tool for systematic reviewers gauging how much a meta-analysis o
 
 ## Example 
 
-Below is a forest plot for the dataset _greentea_ (included with this R package) which includes 14 studies registered with  [clinicaltrials.gov](clinicaltrials.gov). Of these, 11 were published and 3 were unpublished (as of mid 2013). All 3 unpublished studies were assigned ‘negative’ outcomes. 
+Below is a forest plot for the dataset _greentea_ (included with this R package) which includes 14 studies registered with  [clinicaltrials.gov](clinicaltrials.gov). Of these, 11 were denoted as 'published' and the other 3 as 'unpublished' (for the purposes of demonstration). All 3 'unpublished' studies were assigned ‘negative’ outcomes. 
 
 ![](images/greentea_meta.jpg)
 
