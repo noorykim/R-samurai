@@ -4,9 +4,10 @@ A visualization tool for systematic reviewers gauging how much a meta-analysis o
 
 ## Example 
 
+Below is a forest plot for the dataset _greentea_ (included with this R package) with all three unpublished studies assigned to have ‘negative’ outcomes. The dataset has 11 published studies.
+
 ![](images/greentea_meta.jpg)
 
-Forest plot for the dataset _greentea_ (included with this R package) with all three unpublished studies assigned to have ‘negative’ outcomes. The dataset has 11 published studies. The random number seed used to generate this figure was 52.
 
 ## Software
 
