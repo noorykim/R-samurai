@@ -8,6 +8,7 @@ Below is a forest plot for the dataset _greentea_ (included with this R package)
 
 ![](images/greentea_meta.jpg)
 
+The standardized mean differences (SMD) are generated using the DerSimonian-Laird method.
 
 ## Software
 
