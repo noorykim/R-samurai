@@ -2,6 +2,12 @@
 
 A visualization tool for systematic reviewers gauging how much a meta-analysis of published clinical trial results may (1) change with the inclusion of results from unpublished studies and/or (2) remain biased by the exclusion of unpublished results.
 
+## Example 
+
+![](images/greentea_meta.jpg)
+
+Forest plot for the dataset _greentea_ (included with this R package) with all three unpublished studies assigned to have ‘negative’ outcomes. The dataset has 11 published studies. The random number seed used to generate this figure was 52.
+
 ## Software
 
 [CRAN repository](https://CRAN.R-project.org/package=SAMURAI)
