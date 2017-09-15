@@ -18,6 +18,10 @@ The standardized mean differences (SMD) are generated using the DerSimonian-Lair
 
 [Systematic Reviews journal article](https://doi.org/10.1186/2046-4053-3-27)
 
+## Online version of select data sets
+
+[R Shiny app](https://noory.shinyapps.io/samurai/)
+
 ### Citation
 
 Kim NY, Bangdiwala SI, Thaler K, Gartlehner G. 2014. "SAMURAI: Sensitivity analysis of a meta-analysis with unpublished but registered analytical investigations" _Systematic Reviews_ 2014 Mar 18; **3**:27. doi: 10.1186/2046-4053-3-27
