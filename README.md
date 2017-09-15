@@ -20,7 +20,7 @@ The standardized mean differences (SMD) are generated using the DerSimonian-Lair
 
 ## Online version with preset data sets
 
-[R Shiny app](https://noory.shinyapps.io/samurai/)
+[R Shiny app](https://noory.shinyapps.io/samurai_example/)
 
 ### Citation
 
