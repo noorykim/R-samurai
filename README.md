@@ -18,7 +18,7 @@ The standardized mean differences (SMD) are generated using the DerSimonian-Lair
 
 [Systematic Reviews journal article](https://doi.org/10.1186/2046-4053-3-27)
 
-## Online version of select data sets
+## Online version with preset data sets
 
 [R Shiny app](https://noory.shinyapps.io/samurai/)
 
