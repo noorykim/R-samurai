@@ -57,7 +57,7 @@ ui <- fluidPage(
       wellPanel(           
         ## References
         tags$h4('References:'),
-        tags$a(href='https://doi.org/10.1186/2046-4053-3-27', 'Systematic Reviews 2014 3:27'),
+        tags$a(href='https://doi.org/10.1186/2046-4053-3-27', 'Systematic Reviews (2014) 3:27'),
         br(),
         tags$a(href='https://cran.r-project.org/web/packages/SAMURAI/index.html', 'SAMURAI, an R package')
       )
