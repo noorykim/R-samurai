@@ -13,39 +13,48 @@ ui <- fluidPage(
   tags$h1("Sensitivity Analysis of a Meta-Analysis to Unpublished Studies"),
   
   fluidRow(
-    column(12, 
-      tags$h4('References:'),
-      tags$a(href='https://doi.org/10.1186/2046-4053-3-27', 'Systematic Reviews 2014 3:27'),
-      br(),
-      tags$a(href='https://cran.r-project.org/web/packages/SAMURAI/index.html', 'SAMURAI, an R package')
-    )
-  ),
-  
-  ## inputs
-  fluidRow(
-    column(12, 
-      ## Choose dataset 
-      selectInput("dataset", 
-                  label = h4("Choose a dataset:"),
-                  choices = c("green tea", "Fleiss (1993)", "H.pylori"),
-                  width = '40%')
+
+    ## Choose dataset to plot
+    column(3, 
+           selectInput("dataset", 
+                       label = h4("Choose an existing dataset:"),
+                       choices = c("green tea", "Fleiss (1993)", "H.pylori"),
+                       width = '50%')
+    ),  
+
+    ## select box 1
+    column(6, 
+           selectInput(
+             "studies_outlook1", 
+             label = h4("Select outlook of all unpublished studies in Plot 1"), 
+             choices = list("initial settings",
+                            "-- --",
+                            "very positive", "positive", "no effect", "negative", "very negative", 
+                            "-- based on published studies' effect size and CL --",
+                            "very positive CL", "positive CL", "current effect", "negative CL", "very negative CL"), 
+             selected = "initial settings",
+             width = '100%')
+    ),
+
+    ## References
+    column(3, 
+           tags$h4('References:'),
+           tags$a(href='https://doi.org/10.1186/2046-4053-3-27', 'Systematic Reviews 2014 3:27'),
+           br(),
+           tags$a(href='https://cran.r-project.org/web/packages/SAMURAI/index.html', 'SAMURAI, an R package')
     )  
+    
   ),
 
   fluidRow(
-    column(6, 
-      ## select box 1
-      selectInput(
-        "studies_outlook1", 
-        label = h4("Select outlook of all unpublished studies in Plot 1"), 
-        choices = list("initial settings",
-                       "-- --",
-                       "very positive", "positive", "no effect", "negative", "very negative", 
-                       "-- based on published studies' effect size and CL --",
-                       "very positive CL", "positive CL", "current effect", "negative CL", "very negative CL"), 
-        selected = "initial settings",
-        width = '100%')
-    ),
+
+    ## Choose dataset to download
+    column(3, 
+      downloadButton("downloadData", "Download as a CSV file"),
+      br(),
+      tags$a(href='https://noory.shinyapps.io/samurai/', 'Click here to upload your own dataset (coming soon)')     
+    ), 
+    
     column(6,
       # select box 2
       selectInput(
@@ -68,8 +77,8 @@ ui <- fluidPage(
     column(12,
       # Output: Tabset w/ plot, summary, and table ----
       tabsetPanel(type = "tabs",
-                  tabPanel("Plot 1", plotOutput(outputId = "plot1")),
-                  tabPanel("Plot 2", plotOutput(outputId = "plot2"))
+                  tabPanel("Click here for Plot 1", plotOutput(outputId = "plot1")),
+                  tabPanel("Click here for Plot 2", plotOutput(outputId = "plot2"))
                   )      
     )  
   )
@@ -145,6 +154,16 @@ server <- function(input, output) {
                outlook = uoutlook)
     
   })
+  
+  # Downloadable csv of selected dataset ----
+  output$downloadData <- downloadHandler(
+    filename = function() {
+      paste(input$dataset, ".csv", sep = "")
+    },
+    content = function(file) {
+      write.csv(inputData(), file, row.names = FALSE)
+    }
+  )
   
     
   # observeEvent(
