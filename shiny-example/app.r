@@ -21,7 +21,8 @@ ui <- fluidPage(
              ## select existing dataset
              selectInput("dataset", 
                          label = "Choose an existing dataset:",
-                         choices = c("greentea", "Fleiss1993", "Hpylori"),
+                         choices = c("green tea", "Fleiss (1993)", "H. pylori"),
+                         selected = "green tea",
                          width = '100%'),       
              
              ## Choose dataset to download
@@ -82,30 +83,37 @@ server <- function(input, output) {
   
   inputData <- reactive({
     switch(input$dataset,
-           "greentea" = greentea,
-           "Hpylori" = Hpylori,
-           "Fleiss1993" = Fleiss1993)
+           "green tea" = greentea,
+           "H. pylori" = Hpylori,
+           "Fleiss (1993)" = Fleiss1993)
   })  
-  
+
+  # inputDatasetName <- reactive({
+  #   switch(input$dataset,
+  #          "green tea" = "greentea",
+  #          "H. pylori" = "Hpylori",
+  #          "Fleiss (1993)" = "Fleiss1993")
+  # })   
+    
   qbinary <- reactive({
     switch(input$dataset,
-           "greentea" = FALSE,
-           "Hpylori" = TRUE,
-           "Fleiss1993" = TRUE)
+           "green tea" = FALSE,
+           "H. pylori" = TRUE,
+           "Fleiss (1993)" = TRUE)
   })  
   
   qmean.sd <- reactive({
     switch(input$dataset,
-           "greentea" = TRUE,
-           "Hpylori" = FALSE,
-           "Fleiss1993" = FALSE)
+           "green tea" = TRUE,
+           "H. pylori" = FALSE,
+           "Fleiss (1993)" = FALSE)
   })
   
   qhigher.is.better <- reactive({
     switch(input$dataset,
-           "greentea" = FALSE,
-           "Hpylori" = FALSE,
-           "Fleiss1993" = FALSE)
+           "green tea" = FALSE,
+           "H. pylori" = FALSE,
+           "Fleiss (1993)" = FALSE)
   })
   
   
