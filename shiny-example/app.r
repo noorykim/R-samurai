@@ -21,7 +21,7 @@ ui <- fluidPage(
         ## select existing dataset
         selectInput("dataset", 
                     label = "Choose an existing dataset:",
-                    choices = c("green tea", "Fleiss (1993)", "H.pylori"),
+                    choices = c("green tea", "Fleiss (1993)", "H. pylori"),
                     width = '100%'),       
   
         ## Choose dataset to download
@@ -87,6 +87,14 @@ server <- function(input, output) {
            "Fleiss (1993)" = Fleiss1993)
   })  
   
+  inputDataName <- reactive({
+    switch(input$dataset,
+           " " = "greentea",
+           "green tea" = "greentea",
+           "H.pylori" = "Hpylori",
+           "Fleiss (1993)" = "Fleiss1993")
+  })
+  
   qbinary <- reactive({
     switch(input$dataset,
            "green tea" = FALSE,
@@ -148,7 +156,7 @@ server <- function(input, output) {
   # Downloadable csv of selected dataset ----
   output$downloadData <- downloadHandler(
     filename = function() {
-      paste(input$dataset, ".csv", sep = "")
+      paste(inputDataName(), ".csv", sep = "")
     },
     content = function(file) {
       write.csv(inputData(), file, row.names = FALSE)
