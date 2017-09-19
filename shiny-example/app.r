@@ -62,7 +62,7 @@ ui <- fluidPage(
         ),
 
       wellPanel(
-        tags$a(href='https://noory.shinyapps.io/samurai/', 'Click here to upload your own dataset (coming soon)')
+        tags$a(href='https://noory.shinyapps.io/samurai/', 'Click here to upload your own dataset')
       ),
       
       ## References
