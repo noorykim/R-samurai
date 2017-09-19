@@ -21,7 +21,7 @@ ui <- fluidPage(
              ## select existing dataset
              selectInput("dataset", 
                          label = "Choose an existing dataset:",
-                         choices = c("green tea", "Fleiss (1993)", "H.pylori"),
+                         choices = c("greentea", "Fleiss1993", "Hpylori"),
                          width = '100%'),       
              
              ## Choose dataset to download
@@ -82,30 +82,30 @@ server <- function(input, output) {
   
   inputData <- reactive({
     switch(input$dataset,
-           "green tea" = greentea,
-           "H.pylori" = Hpylori,
-           "Fleiss (1993)" = Fleiss1993)
+           "greentea" = greentea,
+           "Hpylori" = Hpylori,
+           "Fleiss1993" = Fleiss1993)
   })  
   
   qbinary <- reactive({
     switch(input$dataset,
-           "green tea" = FALSE,
-           "H.pylori" = TRUE,
-           "Fleiss (1993)" = TRUE)
+           "greentea" = FALSE,
+           "Hpylori" = TRUE,
+           "Fleiss1993" = TRUE)
   })  
   
   qmean.sd <- reactive({
     switch(input$dataset,
-           "green tea" = TRUE,
-           "H.pylori" = FALSE,
-           "Fleiss (1993)" = FALSE)
+           "greentea" = TRUE,
+           "Hpylori" = FALSE,
+           "Fleiss1993" = FALSE)
   })
   
   qhigher.is.better <- reactive({
     switch(input$dataset,
-           "green tea" = FALSE,
-           "H.pylori" = FALSE,
-           "Fleiss (1993)" = FALSE)
+           "greentea" = FALSE,
+           "Hpylori" = FALSE,
+           "Fleiss1993" = FALSE)
   })
   
   
@@ -148,7 +148,7 @@ server <- function(input, output) {
   # Downloadable csv of selected dataset ----
   output$downloadData <- downloadHandler(
     filename = function() {
-      paste(gsub(' ', '', gsub('.', '', input$dataset)), ".csv", sep = "")
+      paste(input$dataset, ".csv", sep = "")
     },
     content = function(file) {
       write.csv(inputData(), file, row.names = FALSE)
