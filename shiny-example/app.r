@@ -21,7 +21,7 @@ ui <- fluidPage(
         ## select existing dataset
         selectInput("dataset", 
                     label = "Choose an existing dataset:",
-                    choices = c("green tea", "Fleiss (1993)", "H. pylori"),
+                    choices = c("green tea", "Fleiss (1993)", "H.pylori"),
                     width = '100%'),       
   
         ## Choose dataset to download
