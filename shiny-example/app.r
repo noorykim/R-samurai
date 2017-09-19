@@ -21,7 +21,7 @@ ui <- fluidPage(
         ## select existing dataset
         selectInput("dataset", 
                    label = "Choose an existing dataset:",
-                   choices = c("green tea", "Fleiss (1993)", "H. pylori"),
+                   choices = c("Fleiss (1993)", "green tea", "H. pylori"),
                    selected = "green tea",
                    width = '100%'),       
         
@@ -215,7 +215,7 @@ server <- function(input, output) {
     switch(input$dataset,
            "green tea" = "Randomized clinical trials of at least 12 weeks duration assessing the effect of green tea consumption on weight loss. The standardized mean differences reflect changes in weight (kg).",
            "H. pylori" = "Randomized clinical trials comparing duodenal ulcer acute healing among (1) patients on ulcer healing drug + Helicobacter pylori eradication therapy vs. (2) patients ulcer healing drug alone. The event counts represent the numbers of patients not healed.",
-           "Fleiss (1993)" = "A meta-analytic data set that includes 7 published placebo-controlled randomized studies of the effect of aspirin in preventing death after myocardial infarction. The data set also includes 2 (fictional) unpublished studies. The defined binary outcome event is death." )
+           "Fleiss (1993)" = "This data set originally included 7 published placebo-controlled randomized studies on the effect of aspirin in preventing death after myocardial infarction. The defined binary outcome event is death. 2 (fictional) unpublished studies have been added." )
   })  
 
   ## to show description of data set
