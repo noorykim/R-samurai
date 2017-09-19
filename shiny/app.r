@@ -40,7 +40,9 @@ ui <- fluidPage(
         tags$h4("Plot settings: "),
         checkboxInput("binary", "binary (Outcome is dichotomous)", TRUE),
         checkboxInput("msd", "mean.sd (Data includes means and standard deviations)", TRUE),
-        checkboxInput("higher_better", "higher.is.better (Higher outcome or counts desired)", TRUE)
+        checkboxInput("higher_better", "higher.is.better (Higher outcome or counts desired)", TRUE),
+        
+        tags$h6("If you get an error message for the plots, first try changing these settings (so that they are appropriate for the input data set).")
       ),          
            
       ## examples of data sets
@@ -115,6 +117,7 @@ ui <- fluidPage(
                     tabPanel("Plot 1", plotOutput(outputId = "plot1")),
                     tabPanel("Plot 2", plotOutput(outputId = "plot2"))
       )
+      
     )
     
   )
