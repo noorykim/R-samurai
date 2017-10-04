@@ -1,0 +1,2 @@
+export(forestsens, funnelplot)
+import(metafor)
